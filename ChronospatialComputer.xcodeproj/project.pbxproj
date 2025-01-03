@@ -6,8 +6,33 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		EA2396552D2824A400F89719 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2396542D2824A400F89719 /* Foundation.framework */; };
+		EA2396572D2824B000F89719 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2396562D2824B000F89719 /* Metal.framework */; };
+		EA2396752D28376700F89719 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2396542D2824A400F89719 /* Foundation.framework */; };
+		EA2396762D28376D00F89719 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2396562D2824B000F89719 /* Metal.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		EA2395F22D28130500F89719 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		EA23965D2D28281F00F89719 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		EA23966A2D28371700F89719 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -20,12 +45,36 @@
 
 /* Begin PBXFileReference section */
 		EA2395F42D28130500F89719 /* chronospatial-computer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "chronospatial-computer"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA2396542D2824A400F89719 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EA2396562D2824B000F89719 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		EA23965F2D28281F00F89719 /* scratch */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = scratch; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA23966C2D28371700F89719 /* vector-sum */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "vector-sum"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		EA2395F52D28130500F89719 /* chronospatial-computer */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "chronospatial-computer";
+			sourceTree = "<group>";
+		};
+		EA2395FB2D28221C00F89719 /* metal-cpp */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "metal-cpp";
+			sourceTree = "<group>";
+		};
+		EA2396592D28267800F89719 /* include */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = include;
+			sourceTree = "<group>";
+		};
+		EA2396602D28281F00F89719 /* scratch */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = scratch;
+			sourceTree = "<group>";
+		};
+		EA23966D2D28371700F89719 /* vector-sum */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "vector-sum";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -35,6 +84,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA2396572D2824B000F89719 /* Metal.framework in Frameworks */,
+				EA2396552D2824A400F89719 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA23965C2D28281F00F89719 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA2396692D28371700F89719 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA2396762D28376D00F89719 /* Metal.framework in Frameworks */,
+				EA2396752D28376700F89719 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,7 +111,12 @@
 		EA2395DD2D28111E00F89719 = {
 			isa = PBXGroup;
 			children = (
+				EA2396592D28267800F89719 /* include */,
+				EA2395FB2D28221C00F89719 /* metal-cpp */,
 				EA2395F52D28130500F89719 /* chronospatial-computer */,
+				EA2396602D28281F00F89719 /* scratch */,
+				EA23966D2D28371700F89719 /* vector-sum */,
+				EA2396532D2824A400F89719 /* Frameworks */,
 				EA2395E72D28111E00F89719 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,8 +125,19 @@
 			isa = PBXGroup;
 			children = (
 				EA2395F42D28130500F89719 /* chronospatial-computer */,
+				EA23965F2D28281F00F89719 /* scratch */,
+				EA23966C2D28371700F89719 /* vector-sum */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		EA2396532D2824A400F89719 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA2396562D2824B000F89719 /* Metal.framework */,
+				EA2396542D2824A400F89719 /* Foundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,12 +157,58 @@
 			);
 			fileSystemSynchronizedGroups = (
 				EA2395F52D28130500F89719 /* chronospatial-computer */,
+				EA2395FB2D28221C00F89719 /* metal-cpp */,
+				EA2396592D28267800F89719 /* include */,
 			);
 			name = "chronospatial-computer";
 			packageProductDependencies = (
 			);
 			productName = "chronospatial-computer";
 			productReference = EA2395F42D28130500F89719 /* chronospatial-computer */;
+			productType = "com.apple.product-type.tool";
+		};
+		EA23965E2D28281F00F89719 /* scratch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA2396632D28281F00F89719 /* Build configuration list for PBXNativeTarget "scratch" */;
+			buildPhases = (
+				EA23965B2D28281F00F89719 /* Sources */,
+				EA23965C2D28281F00F89719 /* Frameworks */,
+				EA23965D2D28281F00F89719 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				EA2396602D28281F00F89719 /* scratch */,
+			);
+			name = scratch;
+			packageProductDependencies = (
+			);
+			productName = scratch;
+			productReference = EA23965F2D28281F00F89719 /* scratch */;
+			productType = "com.apple.product-type.tool";
+		};
+		EA23966B2D28371700F89719 /* vector-sum */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA2396702D28371700F89719 /* Build configuration list for PBXNativeTarget "vector-sum" */;
+			buildPhases = (
+				EA2396682D28371700F89719 /* Sources */,
+				EA2396692D28371700F89719 /* Frameworks */,
+				EA23966A2D28371700F89719 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				EA23966D2D28371700F89719 /* vector-sum */,
+			);
+			name = "vector-sum";
+			packageProductDependencies = (
+			);
+			productName = "vector-sum";
+			productReference = EA23966C2D28371700F89719 /* vector-sum */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -92,6 +221,12 @@
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					EA2395F32D28130500F89719 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					EA23965E2D28281F00F89719 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					EA23966B2D28371700F89719 = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
@@ -111,12 +246,28 @@
 			projectRoot = "";
 			targets = (
 				EA2395F32D28130500F89719 /* chronospatial-computer */,
+				EA23965E2D28281F00F89719 /* scratch */,
+				EA23966B2D28371700F89719 /* vector-sum */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EA2395F02D28130500F89719 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA23965B2D28281F00F89719 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA2396682D28371700F89719 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -130,10 +281,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -191,10 +342,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -245,6 +396,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					include,
+					"metal-cpp",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -253,6 +408,52 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					include,
+					"metal-cpp",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EA2396642D28281F00F89719 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = include;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EA2396652D28281F00F89719 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = include;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EA2396712D28371700F89719 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					include,
+					"metal-cpp",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EA2396722D28371700F89719 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					include,
+					"metal-cpp",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -274,6 +475,24 @@
 			buildConfigurations = (
 				EA2395F92D28130500F89719 /* Debug */,
 				EA2395FA2D28130500F89719 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA2396632D28281F00F89719 /* Build configuration list for PBXNativeTarget "scratch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA2396642D28281F00F89719 /* Debug */,
+				EA2396652D28281F00F89719 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA2396702D28371700F89719 /* Build configuration list for PBXNativeTarget "vector-sum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA2396712D28371700F89719 /* Debug */,
+				EA2396722D28371700F89719 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

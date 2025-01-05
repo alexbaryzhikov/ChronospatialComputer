@@ -1,5 +1,4 @@
 #include <cassert>
-#include <cxxabi.h>
 #include <simd/simd.h>
 
 #define NS_PRIVATE_IMPLEMENTATION
@@ -7,20 +6,13 @@
 #include "Metal/Metal.hpp"
 #include <VectorIO.hpp>
 #include <Print.hpp>
-
-template<typename T>
-std::unique_ptr<char, void(*)(void*)> typeName() {
-    int status = 0;
-    const char* mangled_name = typeid(T).name();
-    char* demangled_name = abi::__cxa_demangle(mangled_name, nullptr, nullptr, &status);
-    return std::unique_ptr<char, void(*)(void*)>(demangled_name, std::free);
-}
+#include <TypeName.hpp>
 
 template<typename T>
 std::shared_ptr<T> autoRelease(T* resource, NS::Error** error = nullptr) {
     if (!resource) {
         print("Couldn't create ", typeName<T>().get());
-        if (error) {
+        if (error && *error) {
             println(": ", (*error)->localizedDescription()->utf8String());
         } else {
             println();
@@ -49,7 +41,7 @@ struct GPUHandler {
     }
     
     std::vector<float> vectorSum(const std::vector<float>& a, const std::vector<float>& b) {
-        auto pool = NS::AutoreleasePool::alloc()->init();
+        auto pool = autoRelease(NS::AutoreleasePool::alloc()->init());
 
         size_t vectorSize = a.size();
         size_t bufferSize = vectorSize * sizeof(float);
@@ -73,9 +65,6 @@ struct GPUHandler {
 
         std::vector<float> result(vectorSize);
         std::memcpy(result.data(), bufferResult->contents(), bufferResult->length());
-
-        pool->release();
-
         return result;
     }
 };
@@ -89,8 +78,6 @@ void compute() {
 }
 
 int main(int argc, const char* argv[]) {
-    auto pool = NS::AutoreleasePool::alloc()->init();
+    auto pool = autoRelease(NS::AutoreleasePool::alloc()->init());
     compute();
-    pool->release();
-    return 0;
 }

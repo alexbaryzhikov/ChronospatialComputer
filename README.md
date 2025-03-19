@@ -1,6 +1,6 @@
 # Chronospatial Computer
 
-A Metal-based GPU implementation of a custom virtual machine that explores the intersection of program execution and self-referential computation. This project demonstrates how GPU parallelization can be used to solve complex computational problem.
+This project demonstrates how GPU parallelization can be used to solve computationally intensive problem. I used a Metal-based GPU implementation of a custom virtual machine as an example problem.
 
 ## Overview
 
